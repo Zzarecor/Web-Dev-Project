@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AI Collaberation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 150px; /* Set the width of the input field */
+            text-align: center; /* Center-align the text */
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-bar">
+        <table>
+            <tr>
+                <td><a href="index.html">About</a></td>
+                <td><a href="interests.html">Interests</a></td>
+                <td><a href="ai-collab.html" class="active">AI Collaberation App</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section-container" id="intro-container">
+        <h1>AI Collaberation App</h1>
+        <p>The following number gussing game app was made in collaberation with AI and was tuned using AI prompts.</p>
+    </div>
+    <div class="section-container">
+        <h1>Number Guessing Game</h1>
+        <p>Guess the number (between 1 and 100):</p>
+        <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+        <button onclick="resetGame()">Reset</button>
+        <p id="message"></p>
+
+        <script>
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            function checkGuess() {
+                const guess = parseInt(document.getElementById('guess').value);
+                const message = document.getElementById('message');
+
+                if (isNaN(guess) || guess < 1 || guess > 100) {
+                    message.textContent = "Please enter a number between 1 and 100.";
+                    return;
+                }
+
+                if (guess === randomNumber) {
+                    message.textContent = "Congratulations! You guessed the correct number!";
+                } else if (guess < randomNumber) {
+                    message.textContent = "Too low! Try again.";
+                } else {
+                    message.textContent = "Too high! Try again.";
+                }
+            }
+
+            function resetGame() {
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+                document.getElementById('guess').value = '';
+                document.getElementById('message').textContent = '';
+            }
+        </script>
+    </div>
+</body>
+</html>

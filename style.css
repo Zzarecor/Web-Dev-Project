@@ -1,0 +1,130 @@
+html, body {
+    background-color: darkgrey;
+    background-image: url("img/bg-wallpaper.jpg");
+    background-size: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 img {
+    width: 100%;
+}
+
+#nav-bar, #nav-bar table {
+    background-color: #333;
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+#nav-bar td {
+    width: 33.33%
+}
+
+#nav-bar a {
+    display: block;
+    width: 100%
+}
+
+#nav-bar {
+    float: left;
+    color: #f2f2f2;
+    font-size: 17px;
+    text-align: center;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+#nav-bar td:hover {
+    background-color: #ababab;
+    color: black;
+}
+
+#nav-bar a.active {
+    background-color: #616161;
+    color: white;
+}
+
+#intro-container {
+    margin-top: 40px;
+}
+
+.section-container {
+    opacity: 0;
+    transform: translateX(-100%);
+    background-color: rgb(193, 190, 190);
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 5px 40px;
+    animation: slide-in 1s ease forwards;
+}
+
+.section-container h1, .section-container h3 {
+    text-align: center;
+}
+
+.xp-title {
+    font-weight: bold;
+}
+
+.xp-timeframe {
+    padding-left: 5px;
+}
+
+.tableauPlaceholder {
+    width: 100%;
+}
+
+.yt-vid iframe {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+}
+
+.tableauPlaceholder {
+    margin: 0 auto;
+    display: block;
+}
+
+.tableauPlaceholder iframe {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+  
+/* Animation keyframes */
+@keyframes slide-in {
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+/* Add staggered animation delay */
+.section-container:nth-child(1) {
+animation-delay: 0.2s;
+}
+
+.section-container:nth-child(2) {
+animation-delay: 0.4s;
+}
+
+.section-container:nth-child(3) {
+animation-delay: 0.6s;
+}
+
+.section-container:nth-child(4) {
+animation-delay: 0.8s;
+}
+
+.section-container:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.section-container:nth-child(6) {
+    animation-delay: 1.2s;
+}
